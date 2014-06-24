@@ -8,7 +8,7 @@ app.get('/', function(req, res, next) {
 
   doc.pipe(res);
   doc.registerFont('arial', path.join(__dirname + '/Arial.ttf'), 'arial');
-  doc.registerFont('arial2', path.join(__dirname + '/Arial2.ttf'), 'arial');
+  doc.registerFont('arial2', path.join(__dirname + '/Arial2.ttf'), 'arial2');
   doc.font('arial');
 
   doc.info.title = "My Booklet";
@@ -111,6 +111,15 @@ app.get('/', function(req, res, next) {
     .text('Dude name here', 30, 790);
   doc
     .font('arial2')
+    .fontSize(10)
+    .fillColor('#555555')
+    .text('Dude name here', 120, 790);
+    doc
+      .font('Times-Roman')
+      .fontSize(10)
+      .fillColor('#555555')
+      .text('Dude name here', 240, 790);
+  doc
     .fontSize(10)
     .fillColor('#555555')
     .text('ページ 2 ／ 2', 500, 790);
