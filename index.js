@@ -66,8 +66,6 @@ app.get('/', function(req, res, next) {
 
   doc.addPage();
 
-  doc.font('arial2');
-
   //Header
   doc
     .moveTo(30,76)
@@ -112,6 +110,7 @@ app.get('/', function(req, res, next) {
     .fillColor('#555555')
     .text('Dude name here', 30, 790);
   doc
+    .font('arial2')
     .fontSize(10)
     .fillColor('#555555')
     .text('ページ 2 ／ 2', 500, 790);
