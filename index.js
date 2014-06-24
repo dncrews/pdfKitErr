@@ -109,16 +109,18 @@ app.get('/', function(req, res, next) {
     .fontSize(10)
     .fillColor('#555555')
     .text('Dude name here', 30, 790);
+
+  doc.font('arial2')
   doc
-    .font('arial2')
     .fontSize(10)
     .fillColor('#555555')
     .text('Dude name here', 120, 790);
+  doc.font('Times-Roman');
     doc
-      .font('Times-Roman')
       .fontSize(10)
       .fillColor('#555555')
       .text('Dude name here', 240, 790);
+  doc.font('arial');
   doc
     .fontSize(10)
     .fillColor('#555555')
