@@ -121,6 +121,6 @@ app.get('/', function(req, res, next) {
 
 });
 
-app.listen(5001, function() {
+app.listen(process.env.PORT || 5001, function() {
   console.log('go');
 });
