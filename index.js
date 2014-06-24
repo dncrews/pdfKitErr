@@ -8,6 +8,7 @@ app.get('/', function(req, res, next) {
 
   doc.pipe(res);
   doc.registerFont('arial', path.join(__dirname + '/Arial.ttf'), 'arial');
+  doc.registerFont('arial2', path.join(__dirname + '/Arial2.ttf'), 'arial');
   doc.font('arial');
 
   doc.info.title = "My Booklet";
@@ -64,6 +65,8 @@ app.get('/', function(req, res, next) {
 
 
   doc.addPage();
+
+  doc.font('arial2');
 
   //Header
   doc
