@@ -3,6 +3,33 @@ var pdfDocument = require('pdfkit');
 var path = require('path');
 var app = express();
 
+app.get('/simple', function(req, res, next) {
+  var doc = new pdfDocument({size: "A4", margins : {top : 0, bottom : 0, left : 0, right : 0} });
+
+  doc.pipe(res);
+  doc.registerFont('arial', path.join(__dirname + '/Arial.ttf'), 'arial');
+  doc.font('arial');
+
+  doc.info.title = "My Booklet";
+
+  // Stories
+  doc
+    .fontSize(14)
+    .text('(A,诶,ēi) (B,比,bǐ) (C,西,xī)')
+    .text('(D,迪,dí) (E,伊,yī) (F,艾弗,ài fú)')
+    .text('(G,吉,jí) (H,艾尺,ài chǐ) (I,艾,ài)')
+    .text('(J,杰,jié) (K,开,kāi) (L,艾勒,ài lè)')
+    .text('(M,艾马,ài mǎ) (N,艾娜,ài nà) (O,哦,ó)')
+    .text('(P,屁,pì) (Q,吉吾,jí wú) (R,艾儿,ài ér)')
+    .text('(S,艾丝,ài sī) (T,提,tí) (U,伊吾,yī wú)')
+    .text('(V,维,wéi) (W,豆贝尔维,dòu bèi ěr wéi)')
+    .text('(X,艾克斯,yī kè sī) (Y,吾艾,wú ài) (Z,贼德,zéi dé)')
+    .text('abcdefghijklmnopqrstuvwxyz')
+    .text('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+
+  doc.end();
+});
+
 app.get('/', function(req, res, next) {
   var doc = new pdfDocument({size: "A4", margins : {top : 0, bottom : 0, left : 0, right : 0} });
 
